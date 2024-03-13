@@ -2,16 +2,21 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-image: url(img/fondo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .form-register {
-  width: 20%;
-  margin: 30px auto;
-  background-color:#24303c;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  background: #24303c;
+  padding: 30px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 4px;
+  font-family: 'calibri';
+  color: white;
+  box-shadow: 7px 13px 37px #000;
 }
 
 .form-group {
@@ -32,18 +37,17 @@ body {
   border: 1px solid #1f53c5;
   border-radius: 5px;
   box-sizing: border-box;
+  color: #ffffff;
 }
 
 button {
-  display: block;
   width: 100%;
-  padding: 10px;
+  background: #1f53c5;
   border: none;
-  border-radius: 5px;
-  background-color: #1f53c5;
-  color: #24303c;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
 }
 
 button:hover {
