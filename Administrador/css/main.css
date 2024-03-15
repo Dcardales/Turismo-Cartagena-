@@ -150,3 +150,28 @@ a{
 .rotate{
   transform: rotate(180deg);
 }
+
+.tabla-usuarios {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-usuarios th,
+.tabla-usuarios td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.tabla-usuarios th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+}
+
+.tabla-usuarios tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tabla-usuarios tr:hover {
+  background-color: #ddd;
+}
