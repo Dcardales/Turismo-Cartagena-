@@ -175,3 +175,65 @@ a{
 .tabla-usuarios tr:hover {
   background-color: #ddd;
 }
+
+/* Estilos para los botones */
+.btn-editar,
+.btn-eliminar,
+.btn-cambiar-contraseña,
+.btn-agregar-usuario {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-editar {
+  background-color: #0C5DF4;
+  color: #fff;
+}
+
+.btn-eliminar {
+  background-color: #FF4D4D;
+  color: #fff;
+}
+
+.btn-cambiar-contraseña {
+  background-color: #FFA500;
+  color: #fff;
+}
+
+.btn-agregar-usuario {
+  background-color: #32CD32;
+  color: #fff;
+}
+
+/* Estilos para el botón "Nuevo usuario" */
+#nuevoUsuarioBtn {
+  padding: 10px 20px; /* Ajusta el padding según sea necesario */
+  background-color: #32CD32; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer; /* Cursor apuntando */
+  margin-bottom: 10px; /* Margen inferior */
+}
+
+#nuevoUsuarioBtn:hover {
+  background-color: #228B22; /* Color de fondo del botón al pasar el cursor */
+}
+/* Estilos para el input de búsqueda */
+#buscador {
+  padding: 8px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde del input */
+  border-radius: 5px; /* Borde redondeado */
+  width: 200px; /* Ancho del input */
+  margin-bottom: 10px; /* Margen inferior */
+}
+
+/* Estilos para el texto de marcador de posición del input de búsqueda */
+#buscador::placeholder {
+  color: #999; /* Color del texto del marcador de posición */
+}
+
+

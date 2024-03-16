@@ -1,83 +1,85 @@
-<!DOCTYPE html>
-<html lang="es">
+    <!DOCTYPE html>
+    <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="./CSS/main.css">
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="./CSS/main.css">
+        <link rel="stylesheet" href="./css/Modal-Contraseña.css">
 
-    <title>Turismo Cartagena</title>
-</head>
+        <title>Turismo Cartagena</title>
+    </head>
 
-<body id="body-pd">
-    <div class="l-navbar" id="navbar">
-        <nav class="nav">
-            <div>
-                <div class="nav__brand">
-                    <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
-                    <a href="#" class="nav__logo">CTG</a>
-                </div>
-                <div class="nav__list">
-                    <a href="#" class="nav__link active">
-                        <ion-icon name="home-outline" class="nav__icon"></ion-icon>
-                        <span class="nav__name">Dashboard</span>
-                    </a>
-                    <a href="#" class="nav__link" onclick="mostrarTabla()">
-                        <ion-icon name="people-outline" class="nav__icon"></ion-icon>
-                        <span class="nav__name">Usuarios</span>
-                    </a>
-
-                    <div class="nav__link collapse">
-                        <ion-icon name="storefront-outline" class="nav__icon"></ion-icon>
-                        <span class="nav__name">Productos</span>
-
-                        <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
-
-                        <ul class="collapse__menu">
-                            <a href="#" class="collapse__sublink">Categorias</a>
-                            <a href="#" class="collapse__sublink">Temporadas</a>
-                            <a href="#" class="collapse__sublink">Sitios</a>
-                        </ul>
+    <body id="body-pd">
+        <div class="l-navbar" id="navbar">
+            <nav class="nav">
+                <div>
+                    <div class="nav__brand">
+                        <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                        <a href="#" class="nav__logo">CTG</a>
                     </div>
+                    <div class="nav__list">
+                        <a href="#" class="nav__link active">
+                            <ion-icon name="home-outline" class="nav__icon"></ion-icon>
+                            <span class="nav__name">Dashboard</span>
+                        </a>
+                        <a href="#" class="nav__link" onclick="mostrarTabla()">
+                            <ion-icon name="people-outline" class="nav__icon"></ion-icon>
+                            <span class="nav__name">Usuarios</span>
+                        </a>
 
-                    <a href="#" class="nav__link">
-                        <ion-icon name="document-text-outline" class="nav__icon"></ion-icon>
-                        <span class="nav__name">Informes</span>
-                    </a>
-                    <div class="nav__link collapse">
-                        <ion-icon name="map-outline" class="nav__icon"></ion-icon> 
-                        <span class="nav__name">Mapas</span>
+                        <div class="nav__link collapse">
+                            <ion-icon name="storefront-outline" class="nav__icon"></ion-icon>
+                            <span class="nav__name">Productos</span>
 
-                        <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
 
-                        <ul class="collapse__menu">
-                            <a href="#" class="collapse__sublink">Ciudad</a>
-                            <a href="#" class="collapse__sublink">Rutas</a>
-                            <a href="#" class="collapse__sublink">Playas</a>
-                        </ul>
+                            <ul class="collapse__menu">
+                                <a href="#" class="collapse__sublink">Categorias</a>
+                                <a href="#" class="collapse__sublink">Temporadas</a>
+                                <a href="#" class="collapse__sublink">Sitios</a>
+                            </ul>
+                        </div>
+
+                        <a href="#" class="nav__link">
+                            <ion-icon name="document-text-outline" class="nav__icon"></ion-icon>
+                            <span class="nav__name">Informes</span>
+                        </a>
+                        <div class="nav__link collapse">
+                            <ion-icon name="map-outline" class="nav__icon"></ion-icon> 
+                            <span class="nav__name">Mapas</span>
+
+                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+
+                            <ul class="collapse__menu">
+                                <a href="#" class="collapse__sublink">Ciudad</a>
+                                <a href="#" class="collapse__sublink">Rutas</a>
+                                <a href="#" class="collapse__sublink">Playas</a>
+                            </ul>
+                        </div>
+                        <a href="#" class="nav__link">
+                            <ion-icon name="settings-outline" class="nav__icon"></ion-icon>
+                            <span class="nav__name">Configuracion</span>
+                        </a>
                     </div>
-                    <a href="#" class="nav__link">
-                        <ion-icon name="settings-outline" class="nav__icon"></ion-icon>
-                        <span class="nav__name">Configuracion</span>
-                    </a>
                 </div>
-            </div>
 
-            <a href="#" class="nav__link">
-                <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
-                <span class="nav__name">Log Out</span>
-            </a>
-        </nav>
-    </div>
+                <a href="#" class="nav__link">
+                    <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                    <span class="nav__name">Log Out</span>
+                </a>
+            </nav>
+        </div>
 
-    <!-- Tabla de usuarios -->
+        <!-- Tabla de usuarios -->
     <div id="tablaUsuarios" style="display: none;">
         <h2>Usuarios</h2>
-        <button onclick="mostrarFormulario()" style="margin-bottom: 10px;">Nuevo usuario</button>
+        <hr>
+        <button id="nuevoUsuarioBtn" onclick="mostrarFormulario()">Nuevo usuario</button>
         <input type="text" id="buscador" placeholder="Buscar usuario...">
-       
+    
         <table class="tabla-usuarios">
             <thead>
                 <tr>
@@ -98,7 +100,11 @@
                     <td>usuario1@example.com</td>
                     <td>administrador</td>
                     <td>activo</td>
-                    <td>Acciones</td> <!-- Aquí puedes poner botones de editar, eliminar, etc. -->
+                    <td>
+                        <button class="btn-editar">Editar</button>
+                        <button class="btn-eliminar">Eliminar</button>
+                        <button class="btn-cambiar-contraseña" id="cambiarContraseñaBtn1" onclick="abrirModalCambiarContraseña('usuario1')">Cambiar Contraseña</button>
+                    </td>
                 </tr>
                 <tr>
                     <td>2</td>
@@ -107,36 +113,66 @@
                     <td>usuario2@example.com</td>
                     <td>ente_regulador</td>
                     <td>activo</td>
-                    <td>Acciones</td> <!-- Aquí puedes poner botones de editar, eliminar, etc. -->
+                    <td>
+                        <button class="btn-editar">Editar</button>
+                        <button class="btn-eliminar">Eliminar</button>
+                        <button class="btn-cambiar-contraseña" id="cambiarContraseñaBtn1" onclick="abrirModalCambiarContraseña('usuario1')">Cambiar Contraseña</button>
+                    </td>
                 </tr>
                 <!-- Agrega más filas según sea necesario -->
             </tbody>
         </table>
     </div>
 
-    <!-- Formulario para agregar nuevo usuario -->
-    <div id="formularioUsuario" style="display: none;">
-        <!-- Aquí va tu formulario para agregar un nuevo usuario -->
+        
+
+        <!-- Formulario para agregar nuevo usuario -->
+        <div id="formularioUsuario" style="display: none;">
+            <!-- Aquí va tu formulario para agregar un nuevo usuario -->
+        </div>
+
+        <!-- Ventana modal para cambiar contraseña -->
+    <div id="modalCambiarContraseña" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2>Cambiar Contraseña</h2>
+            <form id="cambiarContraseñaForm">
+                <label for="nuevaContraseña">Nueva Contraseña:</label>
+                <input type="password" id="nuevaContraseña" name="nuevaContraseña" required>
+                <label for="confirmarContraseña">Confirmar Contraseña:</label>
+                <input type="password" id="confirmarContraseña" name="confirmarContraseña" required>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
     </div>
 
-    <!-- ===== IONICONS ===== -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <!-- ===== IONICONS ===== -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <!-- ===== MAIN JS ===== -->
-    <script src="./js/main.js"></script>
+        <!-- ===== MAIN JS ===== -->
+        <script src="./js/main.js"></script>
 
-    <script>
-        function mostrarTabla() {
-            document.getElementById('tablaUsuarios').style.display = 'block';
-            document.getElementById('formularioUsuario').style.display = 'none';
+        <script>
+            function mostrarTabla() {
+                document.getElementById('tablaUsuarios').style.display = 'block';
+                document.getElementById('formularioUsuario').style.display = 'none';
+            }
+
+            function mostrarFormulario() {
+                document.getElementById('formularioUsuario').style.display = 'block';
+                document.getElementById('tablaUsuarios').style.display = 'none';
+            }
+
+            function abrirModalCambiarContraseña() {
+            document.getElementById('modalCambiarContraseña').style.display = 'block';
         }
 
-        function mostrarFormulario() {
-            document.getElementById('formularioUsuario').style.display = 'block';
-            document.getElementById('tablaUsuarios').style.display = 'none';
+        function cerrarModal() {
+            document.getElementById('modalCambiarContraseña').style.display = 'none';
         }
-    </script>
-</body>
 
-</html>
+        </script>
+    </body>
+
+    </html>
