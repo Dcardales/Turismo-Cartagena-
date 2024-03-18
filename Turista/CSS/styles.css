@@ -1,6 +1,6 @@
 .contenedor-conciertos {
     display: grid;
-    grid-template-columns: 1fr; /* Solo una columna */
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
     gap: 20px; /* Espacio entre las cartas */
 }
 
@@ -18,8 +18,11 @@
 }
 
 .textos {
+    font-family: 'Roboto', sans-serif;
     text-align: center; /* Centra el texto horizontalmente */
-    color: 	rgb(0, 0, 0); /* Color del texto */
+    color: rgb(235, 235, 235); /* Color del texto */
+    font-size: 27px; /* Tamaño del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
 }
 
 .card h3 {
@@ -28,4 +31,27 @@
 
 .card p {
     margin: 5px 0 0; /* Ajusta el margen del párrafo */
+}
+
+.fondo {
+    background-color: #2b499e;
+	background-blend-mode: color-burn;
+    background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+    background-position: center; /* Centra la imagen de fondo */
+	color: rgb(255, 255, 255); /* Color del texto */
+    text-align: center; /* Centra el texto horizontalmente */
+    padding: 50px; /* Ajusta el relleno alrededor del texto */
+    border-radius: 10px; /* Añade bordes redondeados */
+}
+
+.fondo h2 {
+    font-family: 'Roboto', sans-serif; /* Tipo de fuente */
+    font-size: 36px; /* Tamaño del título */
+    margin: 0; /* Elimina el margen del título */
+}
+
+.fondo p {
+    font-family: 'Roboto', sans-serif; /* Tipo de fuente */
+    font-size: 24px; /* Tamaño del texto */
+    margin: 0; /* Elimina el margen del texto */
 }
