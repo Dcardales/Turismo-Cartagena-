@@ -1,93 +1,31 @@
-* {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-
-body {
-	background: #1D202B;
-	color: #fff;
-	font-family: 'Roboto', sans-serif;
-}
-
-.contenedor {
-	width: 90%;
-	max-width: 1200px;
-	margin: auto;
-	padding: 40px 0;
-
-	
-}
-
-.titulo {
-	font-size: 24px;
-	padding: 20px 0;
-}
-
 .contenedor-conciertos {
-	
+    display: grid;
+    grid-template-columns: 1fr; /* Solo una columna */
+    gap: 20px; /* Espacio entre las cartas */
 }
 
 .card {
-	border-radius: 10px;
-	min-height: 200px;
-	font-weight: bold;
-	padding: 20px;
-	position: relative;
-	overflow: hidden;
-	background-size: cover;
-	background-position: center center;
-
-	
+    width: 100%; /* Ajusta el ancho de las cartas al contenedor */
+    height: 300px; /* Altura de las cartas */
+    background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+    background-position: center; /* Centra la imagen de fondo */
+    border-radius: 10px; /* Añade bordes redondeados */
+    overflow: hidden; /* Evita que el contenido se desborde */
+    position: relative; /* Permite posicionar el texto encima de la imagen */
+    display: flex; /* Para centrar el contenido verticalmente */
+    justify-content: center; /* Para centrar el contenido horizontalmente */
+    align-items: center; /* Para centrar el contenido verticalmente */
 }
 
-.card .textos {
-	height: 100%;
-	
-	
+.textos {
+    text-align: center; /* Centra el texto horizontalmente */
+    color: 	rgb(0, 0, 0); /* Color del texto */
 }
 
-.banner {
-	border-radius: 10px;
-	text-align: center;
-	padding: 20px;
-	background-size: cover;
-	background-position: center center;
-
-
+.card h3 {
+    margin: 0; /* Elimina el margen del título */
 }
 
-.banner ul {
-	list-style: none;
-}
-
-.banner ul li {
-	margin: 15px;
-	font-weight: bold;
-}
-
-.banner .boton {
-	background: #FFD600;
-	display: block;
-	width: 100%;
-	font-weight: bold;
-	font-size: 14px;
-	text-align: center;
-	padding: 10px;
-	border: none;
-	border-radius: 100px;
-	font-family: 'Roboto', sans-serif;
-	cursor: pointer;
-}
-
-@media screen and (max-width: 900px) {
-	
-}
-
-@media screen and (max-width: 700px) {
-	
-}
-
-@media screen and (max-width: 600px) {
-
+.card p {
+    margin: 5px 0 0; /* Ajusta el margen del párrafo */
 }
