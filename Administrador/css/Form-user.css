@@ -146,6 +146,18 @@ main {
 	border: 3px solid #bb2929;
 }
 
+/* Estilo para el campo de usuario estático */
+.formulario__input-static {
+	width: 100%;
+	background: #f9f9f9;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 10px;
+	font-weight: bold;
+	color: #333;
+}
 
 /* ----- -----  Mediaqueries ----- ----- */
 @media screen and (max-width: 800px) {
