@@ -1,57 +1,56 @@
 .contenedor-conciertos {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
-    gap: 20px; /* Espacio entre las cartas */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
 }
 
 .card {
-    width: 100%; /* Ajusta el ancho de las cartas al contenedor */
-    height: 300px; /* Altura de las cartas */
-    background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
-    background-position: center; /* Centra la imagen de fondo */
-    border-radius: 10px; /* Añade bordes redondeados */
-    overflow: hidden; /* Evita que el contenido se desborde */
-    position: relative; /* Permite posicionar el texto encima de la imagen */
-    display: flex; /* Para centrar el contenido verticalmente */
-    justify-content: center; /* Para centrar el contenido horizontalmente */
-    align-items: center; /* Para centrar el contenido verticalmente */
+    width: 100%;
+    height: 300px; 
+    background-size: cover; 
+    background-position: center; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .textos {
     font-family: 'Roboto', sans-serif;
-    text-align: center; /* Centra el texto horizontalmente */
-    color: rgb(235, 235, 235); /* Color del texto */
-    font-size: 27px; /* Tamaño del texto */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+    text-align: center; 
+    color: rgb(235, 235, 235); 
+    font-size: 27px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 .card h3 {
-    margin: 0; /* Elimina el margen del título */
+    margin: 0; 
 }
 
 .card p {
-    margin: 5px 0 0; /* Ajusta el margen del párrafo */
+    margin: 5px 0 0; 
 }
 
 .fondo {
     background-color: #2b499e;
 	background-blend-mode: color-burn;
-    background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
-    background-position: center; /* Centra la imagen de fondo */
-	color: rgb(255, 255, 255); /* Color del texto */
-    text-align: center; /* Centra el texto horizontalmente */
-    padding: 50px; /* Ajusta el relleno alrededor del texto */
-    border-radius: 10px; /* Añade bordes redondeados */
-}
+    background-size: cover; 
+    background-position: center; 
+	color: rgb(255, 255, 255);
+    text-align: center; 
+    padding: 50px; 
+    border-radius: 10px; 
 
 .fondo h2 {
-    font-family: 'Roboto', sans-serif; /* Tipo de fuente */
-    font-size: 36px; /* Tamaño del título */
-    margin: 0; /* Elimina el margen del título */
+    font-family: 'Roboto', sans-serif; 
+    font-size: 36px; 
+    margin: 0; 
 }
 
 .fondo p {
-    font-family: 'Roboto', sans-serif; /* Tipo de fuente */
-    font-size: 24px; /* Tamaño del texto */
-    margin: 0; /* Elimina el margen del texto */
+    font-family: 'Roboto', sans-serif; 
+    font-size: 24px; 
+    margin: 0; 
 }
