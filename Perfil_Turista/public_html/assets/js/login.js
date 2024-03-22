@@ -92,7 +92,7 @@ function iniciarSesion() {
             // Si la contraseña es correcta, redirige al menú correspondiente según el perfil del usuario
             var perfilUsuario = perfilesUsuarios[usuario].perfil;
             if (perfilUsuario === "administrador") {
-                window.location.href = "http://127.0.0.1:3000/Perfil_Turista/public_html/assets/html/Menu-Admin.html#"; // Cambia "ruta_a_tu_menu_de_administrador.html" por la ruta correcta de tu menú de administrador
+                window.location.href = "http://127.0.0.1:3002/Perfil_Turista/public_html/assets/html/Menu-Admin.html"; // Cambia "ruta_a_tu_menu_de_administrador.html" por la ruta correcta de tu menú de administrador
             } else if (perfilUsuario === "ente regulador") {
                 window.location.href = "ruta_a_tu_menu_de_ente_regulador.html"; // Cambia "ruta_a_tu_menu_de_ente_regulador.html" por la ruta correcta de tu menú de ente regulador
             }

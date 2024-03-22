@@ -7,9 +7,9 @@
 
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="../css/Admin.css">
-    <link rel="stylesheet" href="../css/Modal-Contraseña.css">
-    <link rel="stylesheet" href="../css/Modal-Eliminar.css">
-    
+    <link rel="stylesheet" href="../css/useradmincontraseña.css">
+    <link rel="stylesheet" href="../css/useradminEliminar.css">
+
 
     <title>Turismo Cartagena</title>
 </head>
@@ -105,7 +105,8 @@
                     <td>
                         <button class="btn-editar">Editar</button>
                         <button class="btn-eliminar" onclick="abrirModalEliminarUsuario()">Eliminar</button>
-                        <button class="btn-cambiar-contraseña" id="cambiarContraseñaBtn1" onclick="abrirModalCambiarContraseña('usuario1')">Cambiar Contraseña</button>
+                        <button class="btn-cambiar-contraseña" id="cambiarContraseñaBtn1"
+                            onclick="abrirModalCambiarContraseña('usuario1')">Cambiar Contraseña</button>
                     </td>
                 </tr>
                 <tr>
@@ -118,7 +119,8 @@
                     <td>
                         <button class="btn-editar">Editar</button>
                         <button class="btn-eliminar" onclick="abrirModalEliminarUsuario()">Eliminar</button>
-                        <button class="btn-cambiar-contraseña" id="cambiarContraseñaBtn1" onclick="abrirModalCambiarContraseña('usuario1')">Cambiar Contraseña</button>
+                        <button class="btn-cambiar-contraseña" id="cambiarContraseñaBtn1"
+                            onclick="abrirModalCambiarContraseña('usuario1')">Cambiar Contraseña</button>
                     </td>
                 </tr>
                 <!-- Agrega más filas según sea necesario -->
@@ -130,77 +132,423 @@
 
     <!-- Formulario para agregar nuevo usuario -->
     <div id="formularioUsuario" style="display: none;">
-        <!-- Aquí va tu formulario para agregar un nuevo usuario -->
+
+        <!DOCTYPE html>
+        <html lang="es">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>REGISTRO USER</title>
+            <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="../css/Admin.css">
+        </head>
+
+        <body>
+            <main>
+                <h1>DATOS BASICOS</h1>
+
+                <form action="" class="formulario" id="formulario">
+
+
+                    <!-- Grupo: Tipo-identificacion -->
+                    <div class="formulario__grupo" id="grupo__tipo-identificacion">
+                        <label for="tipo-identificacion" class="formulario__label">Tipo</label>
+                        <div class="formulario__grupo-input">
+                            <select class="formulario__input" name="tipo-identificacion" id="tipo-identificacion">
+                                <option disabled="">Seleccione una opción</option>
+                                <option selected value="cc">CC</option>
+                                <option value="Nit">NIT</option>
+                                <option value="ce">CE</option>
+                                <option value="pa">PA</option>
+                            </select>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Seleccione una opción</p>
+                    </div>
+
+
+                    <!-- Grupo: Identificacion -->
+                    <div class="formulario__grupo" id="grupo__identificacion">
+                        <label for="identificacion" class="formulario__label">Identificación</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="identificacion" id="identificacion"
+                                placeholder="numer identificacion">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">identificacion incorecta.</p>
+                    </div>
+
+
+                    <!-- Grupo: Nombre -->
+                    <div class="formulario__grupo" id="grupo__nombre">
+                        <label for="nombre" class="formulario__label">Nombre</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="nombre" id="nombre"
+                                placeholder="John Doe">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede
+                            contener
+                            numeros, letras y guion bajo.</p>
+                    </div>
+
+
+                    <!-- Grupo: Apellido -->
+                    <div class="formulario__grupo" id="grupo__apellido">
+                        <label for="apellido" class="formulario__label">Apellido</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="apellido" id="apellido"
+                                placeholder="John Doe">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede
+                            contener
+                            numeros, letras y guion bajo.</p>
+                    </div>
+
+                    <!-- Grupo: Correo Electronico -->
+                    <div class="formulario__grupo" id="grupo__correo">
+                        <label for="correo" class="formulario__label">Correo Electrónico</label>
+                        <div class="formulario__grupo-input">
+                            <input type="email" class="formulario__input" name="correo" id="correo"
+                                placeholder="correo@correo.com">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos,
+                            guiones y
+                            guion bajo.</p>
+                    </div>
+
+                    <!-- Grupo: Teléfono -->
+                    <div class="formulario__grupo" id="grupo__telefono">
+                        <label for="telefono" class="formulario__label">Teléfono</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="telefono" id="telefono"
+                                placeholder="4491234567">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14
+                            dígitos.
+                        </p>
+                    </div>
+
+                    <!-- Grupo: Estado -->
+                    <div class="formulario__grupo" id="grupo__estado">
+                        <label for="estado" class="formulario__label">Estado</label>
+                        <div class="formulario__grupo-input">
+                            <select class="formulario__input" name="estado" id="estado">
+                                <option disabled="">Seleccione una opción</option>
+                                <option value="activo">Activo</option>
+                                <option value="inactivo">Inactivo</option>
+                            </select>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Seleccione una opción</p>
+                    </div>
+
+                    <!-- Grupo: Perfil -->
+                    <div class="formulario__grupo" id="grupo__perfil">
+                        <label for="perfil" class="formulario__label">Perfil</label>
+                        <div class="formulario__grupo-input">
+                            <select class="formulario__input" name="perfil" id="perfil">
+                                <option disabled="">Seleccione una opción</option>
+                                <option value="administrador">Administrador</option>
+                                <option value="ente_regulador">Ente Regulador</option>
+                            </select>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Seleccione una opción</p>
+                    </div>
+
+                    <!-- Grupo: Usuario -->
+                    <div class="formulario__grupo" id="grupo__usuario">
+                        <label for="usuario" class="formulario__label">Usuario</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="usuario" id="usuario"
+                                placeholder="nombre">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede
+                            contener
+                            numeros, letras y guion bajo.</p>
+                    </div>
+
+
+                    <!-- Grupo: Contraseña -->
+                    <div class="formulario__grupo" id="grupo__password">
+                        <label for="password" class="formulario__label">Contraseña</label>
+                        <div class="formulario__grupo-input">
+                            <input type="password" class="formulario__input" name="password" id="password">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+                    </div>
+
+                    <!-- Grupo: Contraseña 2 -->
+                    <div class="formulario__grupo" id="grupo__password2">
+                        <label for="password2" class="formulario__label">Repetir Contraseña</label>
+                        <div class="formulario__grupo-input">
+                            <input type="password" class="formulario__input" name="password2" id="password2">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+                    </div>
+
+
+
+                    <div class="formulario__mensaje" id="formulario__mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario
+                            correctamente. </p>
+                    </div>
+
+                    <div class="formulario__grupo formulario__grupo-btn-enviar">
+                        <button type="submit" class="formulario__btn">Registar</button>
+                        <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado
+                            exitosamente!</p>
+                    </div>
+                </form>
+            </main>
+
+            <script src="../js/Formulario.js"></script>
+            <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+        </body>
+
+        </html>
     </div>
 
-    <!-- Ventana modal para cambiar contraseña -->
-    <div id="modalCambiarContraseña" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="cerrarModal()">&times;</span>
-            <h2>Cambiar Contraseña</h2>
-            <form id="cambiarContraseñaForm">
-                <label for="nuevaContraseña">Nueva Contraseña:</label>
-                <input type="password" id="nuevaContraseña" name="nuevaContraseña" required>
-                <label for="confirmarContraseña">Confirmar Contraseña:</label>
-                <input type="password" id="confirmarContraseña" name="confirmarContraseña" required>
-                <button type="submit">Guardar</button>
-            </form>
+
+    <!-- Formulario para agregar nuevo usuario -->
+    <div id="formularioEditarUsuario" style="display: none;">
+
+        <!DOCTYPE html>
+        < lang="es">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Edición de Usuario</title>
+            <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="../css/Form-user.css">
+        </head>
+
+        <body>
+            <main>
+                <h1>EDITAR DATOS DEL USUARIO</h1>
+                <form action="" class="formulario" id="formulario">
+
+                    <!-- Grupo: Tipo de identificación -->
+                    <div class="formulario__grupo" id="grupo__tipo-identificacion">
+                        <label for="tipo-identificacion" class="formulario__label">Tipo de Identificación</label>
+                        <div class="formulario__grupo-input">
+                            <select class="formulario__input" name="tipo-identificacion" id="tipo-identificacion">
+                                <option disabled="">Seleccione una opción</option>
+                                <option selected value="cc">CC</option>
+                                <option value="Nit">NIT</option>
+                                <option value="ce">CE</option>
+                                <option value="pa">PA</option>
+                            </select>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Seleccione una opción</p>
+                    </div>
+
+
+                    <!-- Grupo: Identificación -->
+                    <div class="formulario__grupo" id="grupo__identificacion">
+                        <label for="identificacion" class="formulario__label">Identificación</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="identificacion" id="identificacion"
+                                placeholder="Número de identificación">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Identificación incorrecta.</p>
+                    </div>
+
+
+                    <!-- Grupo: Nombre -->
+                    <div class="formulario__grupo" id="grupo__nombre">
+                        <label for="nombre" class="formulario__label">Nombre</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="nombre" id="nombre"
+                                placeholder="John Doe">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El nombre debe tener entre 4 y 16 caracteres y solo puede
+                            contener
+                            números, letras y guiones bajos.</p>
+                    </div>
+
+
+                    <!-- Grupo: Apellido -->
+                    <div class="formulario__grupo" id="grupo__apellido">
+                        <label for="apellido" class="formulario__label">Apellido</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="apellido" id="apellido"
+                                placeholder="John Doe">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El apellido debe tener entre 4 y 16 caracteres y solo puede
+                            contener
+                            números, letras y guiones bajos.</p>
+                    </div>
+
+                    <!-- Grupo: Correo Electrónico -->
+                    <div class="formulario__grupo" id="grupo__correo">
+                        <label for="correo" class="formulario__label">Correo Electrónico</label>
+                        <div class="formulario__grupo-input">
+                            <input type="email" class="formulario__input" name="correo" id="correo"
+                                placeholder="correo@correo.com">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El correo solo puede contener letras, números, puntos,
+                            guiones y
+                            guiones bajos.</p>
+                    </div>
+
+                    <!-- Grupo: Teléfono -->
+                    <div class="formulario__grupo" id="grupo__telefono">
+                        <label for="telefono" class="formulario__label">Teléfono</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="telefono" id="telefono"
+                                placeholder="4491234567">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El teléfono solo puede contener números y debe tener como
+                            máximo 14
+                            dígitos.</p>
+                    </div>
+
+                    <!-- Grupo: Estado -->
+                    <div class="formulario__grupo" id="grupo__estado">
+                        <label for="estado" class="formulario__label">Estado</label>
+                        <div class="formulario__grupo-input">
+                            <select class="formulario__input" name="estado" id="estado">
+                                <option disabled="">Seleccione una opción</option>
+                                <option value="activo">Activo</option>
+                                <option value="inactivo">Inactivo</option>
+                            </select>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Seleccione una opción</p>
+                    </div>
+
+                    <!-- Grupo: Perfil -->
+                    <div class="formulario__grupo" id="grupo__perfil">
+                        <label for="perfil" class="formulario__label">Perfil</label>
+                        <div class="formulario__grupo-input">
+                            <select class="formulario__input" name="perfil" id="perfil">
+                                <option disabled="">Seleccione una opción</option>
+                                <option value="administrador">Administrador</option>
+                                <option value="ente_regulador">Ente Regulador</option>
+                            </select>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Seleccione una opción</p>
+                    </div>
+
+                    <!-- Campo oculto para el usuario -->
+                    <div class="formulario__grupo" id="grupo__usuario">
+                        <label for="usuario" class="formulario__label">Usuario</label>
+                        <div class="formulario__grupo-input">
+                            <p class="formulario__input-static" id="usuario">nombre_de_usuario</p>
+                        </div>
+                    </div>
+
+                    <div class="formulario__mensaje" id="formulario__mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario
+                            correctamente. </p>
+                    </div>
+
+                    <div class="formulario__grupo formulario__grupo-btn-enviar">
+                        <button type="submit" class="formulario__btn">Guardar Cambios</button>
+                        <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">¡Datos actualizados
+                            exitosamente!</p>
+                    </div>
+                </form>
+            </main>
+            <script src="../js/useradmin.js"></script>
+            <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+        </body>
+
+        </html>
+    
+    </div>
+
+
+
+
+
+        <!-- Ventana modal para cambiar contraseña -->
+        <div id="modalCambiarContraseña" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarModal()">&times;</span>
+                <h2>Cambiar Contraseña</h2>
+                <form id="cambiarContraseñaForm">
+                    <label for="nuevaContraseña">Nueva Contraseña:</label>
+                    <input type="password" id="nuevaContraseña" name="nuevaContraseña" required>
+                    <label for="confirmarContraseña">Confirmar Contraseña:</label>
+                    <input type="password" id="confirmarContraseña" name="confirmarContraseña" required>
+                    <button type="submit">Guardar</button>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <!-- Ventana modal para eliminar usuario -->
-    <div id="modalEliminarUsuario" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="cerrarModalEliminarUsuario()">&times;</span>
-            <h2><i class="fas fa-info-circle" style="font-size: 48px;"></i></h2>
-            <h3>Eliminar usuario</h3>
-            <p>Atención: ¿Confirma que desea eliminar el usuario?</p>
-            <button class="btn btn-delete" onclick="eliminarUsuario()">Eliminar</button>
-            <button class="btn btn-cancel" onclick="cerrarModalEliminarUsuario()">Cancelar</button>
+        <!-- Ventana modal para eliminar usuario -->
+        <div id="modalEliminarUsuario" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarModalEliminarUsuario()">&times;</span>
+                <h2><i class="fas fa-info-circle" style="font-size: 48px;"></i></h2>
+                <h3>Eliminar usuario</h3>
+                <p>Atención: ¿Confirma que desea eliminar el usuario?</p>
+                <button class="btn btn-delete" onclick="eliminarUsuario()">Eliminar</button>
+                <button class="btn btn-cancel" onclick="cerrarModalEliminarUsuario()">Cancelar</button>
+            </div>
         </div>
-    </div>
 
-    <!-- ===== IONICONS ===== -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <!-- ===== IONICONS ===== -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <!-- ===== MAIN JS ===== -->
-    <script src="../js/main.js"></script>
+        <!-- ===== MAIN JS ===== -->
+        <script src="../js/useradmin.js"></script>
 
-    <script>
-        function mostrarTabla() {
-            document.getElementById('tablaUsuarios').style.display = 'block';
-            document.getElementById('formularioUsuario').style.display = 'none';
-        }
+        <script>
+            function mostrarTabla() {
+                document.getElementById('tablaUsuarios').style.display = 'block';
+                document.getElementById('formularioUsuario').style.display = 'none';
+            }
 
-        function mostrarFormulario() {
-            document.getElementById('formularioUsuario').style.display = 'block';
-            document.getElementById('tablaUsuarios').style.display = 'none';
-        }
+            function mostrarFormulario() {
+                document.getElementById('formularioUsuario').style.display = 'block';
+                document.getElementById('tablaUsuarios').style.display = 'none';
+            }
 
-        function abrirModalEliminarUsuario() {
-            document.getElementById('modalEliminarUsuario').style.display = 'block';
-        }
+            function abrirModalEliminarUsuario() {
+                document.getElementById('modalEliminarUsuario').style.display = 'block';
+            }
 
-        function cerrarModalEliminarUsuario() {
-            document.getElementById('modalEliminarUsuario').style.display = 'none';
-        }
+            function cerrarModalEliminarUsuario() {
+                document.getElementById('modalEliminarUsuario').style.display = 'none';
+            }
 
-        function eliminarUsuario() {
-            // Aquí iría tu lógica para eliminar el usuario
-            // Por ejemplo, podrías enviar una solicitud al servidor para eliminar el usuario de la base de datos
-            console.log('Usuario eliminado');
-            cerrarModalEliminarUsuario();
-        }
+            function eliminarUsuario() {
+                // Aquí iría tu lógica para eliminar el usuario
+                // Por ejemplo, podrías enviar una solicitud al servidor para eliminar el usuario de la base de datos
+                console.log('Usuario eliminado');
+                cerrarModalEliminarUsuario();
+            }
 
-        function abrirModalCambiarContraseña() {
-            document.getElementById('modalCambiarContraseña').style.display = 'block';
-        }
+            function abrirModalCambiarContraseña() {
+                document.getElementById('modalCambiarContraseña').style.display = 'block';
+            }
 
-        function cerrarModal() {
-            document.getElementById('modalCambiarContraseña').style.display = 'none';
-        }
-    </script>
+            function cerrarModal() {
+                document.getElementById('modalCambiarContraseña').style.display = 'none';
+            }
+        </script>
 </body>
 
 </html>
