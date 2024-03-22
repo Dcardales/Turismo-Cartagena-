@@ -1,24 +1,24 @@
 /*===== EXPANDER MENU  =====*/
 const showMenu = (toggleId, navbarId, bodyId) => {
-  const toggle = document.getElementById(toggleId),
-    navbar = document.getElementById(navbarId),
-    bodypadding = document.getElementById(bodyId)
+	const toggle = document.getElementById(toggleId),
+		navbar = document.getElementById(navbarId),
+		bodypadding = document.getElementById(bodyId)
 
-  if (toggle && navbar) {
-    toggle.addEventListener('click', () => {
-      navbar.classList.toggle('expander')
+	if (toggle && navbar) {
+		toggle.addEventListener('click', () => {
+			navbar.classList.toggle('expander')
 
-      bodypadding.classList.toggle('body-pd')
-    })
-  }
+			bodypadding.classList.toggle('body-pd')
+		})
+	}
 }
 showMenu('nav-toggle', 'navbar', 'body-pd')
 
 /*===== LINK ACTIVE  =====*/
 const linkColor = document.querySelectorAll('.nav__link')
 function colorLink() {
-  linkColor.forEach(l => l.classList.remove('active'))
-  this.classList.add('active')
+	linkColor.forEach(l => l.classList.remove('active'))
+	this.classList.add('active')
 }
 linkColor.forEach(l => l.addEventListener('click', colorLink))
 
@@ -28,23 +28,23 @@ const linkCollapse = document.getElementsByClassName('collapse__link')
 var i
 
 for (i = 0; i < linkCollapse.length; i++) {
-  linkCollapse[i].addEventListener('click', function () {
-    const collapseMenu = this.nextElementSibling
-    collapseMenu.classList.toggle('showCollapse')
+	linkCollapse[i].addEventListener('click', function () {
+		const collapseMenu = this.nextElementSibling
+		collapseMenu.classList.toggle('showCollapse')
 
-    const rotate = collapseMenu.previousElementSibling
-    rotate.classList.toggle('rotate')
-  })
+		const rotate = collapseMenu.previousElementSibling
+		rotate.classList.toggle('rotate')
+	})
 }
 
 // Función para abrir la ventana modal
 function abrirModal() {
-  document.getElementById("modalCambiarContraseña").style.display = "block";
+	document.getElementById("modalCambiarContraseña").style.display = "block";
 }
 
 // Función para cerrar la ventana modal
 function cerrarModal() {
-  document.getElementById("modalCambiarContraseña").style.display = "none";
+	document.getElementById("modalCambiarContraseña").style.display = "none";
 }
 
 // Evento para abrir la ventana modal al hacer clic en el botón "Cambiar Contraseña"
@@ -55,9 +55,9 @@ document.getElementsByClassName("close")[0].addEventListener("click", cerrarModa
 
 // Función para manejar la edición de usuarios
 function editarUsuario() {
-  // Aquí puedes agregar la lógica para editar el usuario
-  // Por ejemplo, puedes abrir un formulario de edición, enviar una solicitud al servidor, etc.
-  console.log("Editar usuario"); // Esto es solo para propósitos de demostración, puedes reemplazarlo con la lógica real
+	// Aquí puedes agregar la lógica para editar el usuario
+	// Por ejemplo, puedes abrir un formulario de edición, enviar una solicitud al servidor, etc.
+	console.log("Editar usuario"); // Esto es solo para propósitos de demostración, puedes reemplazarlo con la lógica real
 }
 
 // Seleccionar todos los botones de editar
@@ -65,7 +65,7 @@ const botonesEditar = document.querySelectorAll('.btn-editar');
 
 // Agregar un event listener a cada botón de editar
 botonesEditar.forEach(boton => {
-  boton.addEventListener('click', editarUsuario);
+	boton.addEventListener('click', editarUsuario);
 });
 
 
@@ -97,28 +97,28 @@ const validarFormulario = (e) => {
 	switch (e.target.name) {
 		case "usuario":
 			validarCampo(expresiones.usuario, e.target, 'usuario');
-		break;
+			break;
 		case "nombre":
 			validarCampo(expresiones.nombre, e.target, 'nombre');
-		break;
+			break;
 		case "password":
 			validarCampo(expresiones.password, e.target, 'password');
 			validarPassword2();
-		break;
+			break;
 		case "password2":
 			validarPassword2();
-		break;
+			break;
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
-		break;
+			break;
 		case "telefono":
 			validarCampo(expresiones.telefono, e.target, 'telefono');
-		break;
+			break;
 	}
 }
 
 const validarCampo = (expresion, input, campo) => {
-	if(expresion.test(input.value)){
+	if (expresion.test(input.value)) {
 		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
 		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
 		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
@@ -139,7 +139,7 @@ const validarPassword2 = () => {
 	const inputPassword1 = document.getElementById('password');
 	const inputPassword2 = document.getElementById('password2');
 
-	if(inputPassword1.value !== inputPassword2.value){
+	if (inputPassword1.value !== inputPassword2.value) {
 		document.getElementById(`grupo__password2`).classList.add('formulario__grupo-incorrecto');
 		document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-correcto');
 		document.querySelector(`#grupo__password2 i`).classList.add('fa-times-circle');
@@ -165,7 +165,7 @@ formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked ){
+	if (campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked) {
 		formulario.reset();
 
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
@@ -180,3 +180,15 @@ formulario.addEventListener('submit', (e) => {
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
 	}
 });
+
+
+
+
+
+
+
+
+
+
+
+

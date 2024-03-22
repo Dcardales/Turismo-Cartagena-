@@ -176,6 +176,20 @@ a{
   background-color: #ddd;
 }
 
+.textos {
+  text-align: center; 
+}
+
+.textos h3 {
+  font-size: 1.5rem; 
+  font-weight: bold; 
+  color: #ffffff; 
+}
+
+.textos p {
+  font-size: 1rem; /* Tamaño de fuente para el párrafo */
+  color: #666; /* Color de texto para el párrafo */
+}
 
 
 
