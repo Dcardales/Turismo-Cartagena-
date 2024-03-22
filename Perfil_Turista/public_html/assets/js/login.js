@@ -65,17 +65,21 @@ function register() {
 
 // Definir los perfiles de usuario y sus menús
 var perfilesUsuarios = {
-    "usuario1": {
-        "perfil": "admin",
+    "admin": {
+        "perfil": "administrador",
+        "nombreUsuario": "admin",
+        "contraseña": "admin123",
         "menu": "<a href='#'>Dashboard</a><a href='#'>Administrar usuarios</a><a href='#'>Configuración</a>"
     },
-    "usuario2": {
-        "perfil": "normal",
+    "ente": {
+        "perfil": "ente regulador",
+        "nombreUsuario": "ente",
+        "contraseña": "ente123",
         "menu": "<a href='#'>Dashboard</a><a href='#'>Perfil</a><a href='#'>Configuración</a>"
     }
 };
 
-// Función para verificar el inicio de sesión y mostrar el menú correspondiente
+// Función para verificar el inicio de sesión y redirigir al menú correspondiente
 function iniciarSesion() {
     // Aquí deberías verificar los datos de inicio de sesión
     var usuario = document.getElementById("nombreUsuario").value; // Suponiendo que tienes un campo de entrada para el nombre de usuario
@@ -83,12 +87,15 @@ function iniciarSesion() {
 
     // Verificar si el usuario existe y la contraseña es correcta
     if (perfilesUsuarios.hasOwnProperty(usuario)) {
-        // Si el usuario existe, verifica la contraseña (aquí deberías comparar la contraseña ingresada con la contraseña almacenada, esta es una simplificación)
-        if (contraseña === "contraseñaCorrecta") {
-            // Si la contraseña es correcta, muestra el menú correspondiente al perfil del usuario
+        // Si el usuario existe, verifica la contraseña
+        if (contraseña === perfilesUsuarios[usuario].contraseña) {
+            // Si la contraseña es correcta, redirige al menú correspondiente según el perfil del usuario
             var perfilUsuario = perfilesUsuarios[usuario].perfil;
-            var menuUsuario = perfilesUsuarios[usuario].menu;
-            mostrarMenu(menuUsuario);
+            if (perfilUsuario === "administrador") {
+                window.location.href = "http://127.0.0.1:3000/Perfil_Turista/public_html/assets/html/Menu-Admin.html#"; // Cambia "ruta_a_tu_menu_de_administrador.html" por la ruta correcta de tu menú de administrador
+            } else if (perfilUsuario === "ente regulador") {
+                window.location.href = "ruta_a_tu_menu_de_ente_regulador.html"; // Cambia "ruta_a_tu_menu_de_ente_regulador.html" por la ruta correcta de tu menú de ente regulador
+            }
             alert("¡Bienvenido " + usuario + "!");
         } else {
             alert("Contraseña incorrecta");
@@ -98,14 +105,15 @@ function iniciarSesion() {
     }
 }
 
+
+
+
 // Función para mostrar el menú
 function mostrarMenu(menu) {
+    // Aquí deberías mostrar el menú en la interfaz de usuario
+    // Por ejemplo, podrías agregar el menú al DOM en un contenedor específico
     var menuContainer = document.getElementById("menu");
     menuContainer.innerHTML = menu;
 }
-
-// Llamar a la función anchoPage() al cargar la página
-window.addEventListener("load", anchoPage);
-
 
 
